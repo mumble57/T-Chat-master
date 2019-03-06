@@ -1,6 +1,6 @@
 
 @import Foundation;
-@class Theme
+@class ThemesViewController;
 
 @protocol ThemesViewControllerDelegate <NSObject>
 
