@@ -1,0 +1,39 @@
+
+/* Class = "UINavigationItem"; title = "Tinkoff Chat"; ObjectID = "1bn-C5-PuO"; */
+"1bn-C5-PuO.title" = "Tinkoff Chat";
+
+/* Class = "UILabel"; text = "Some message"; ObjectID = "9qB-yj-Wap"; */
+"9qB-yj-Wap.text" = "Some message";
+
+/* Class = "UILabel"; text = "Александр Васильев"; ObjectID = "BZQ-29-GWJ"; */
+"BZQ-29-GWJ.text" = "Александр Васильев";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ReV-JR-TLs"; */
+"ReV-JR-TLs.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Name"; ObjectID = "Th6-S5-Q8K"; */
+"Th6-S5-Q8K.title" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Green color"; ObjectID = "ZL1-06-cI0"; */
+"ZL1-06-cI0.normalTitle" = "Green color";
+
+/* Class = "UIButton"; normalTitle = "Yellow color"; ObjectID = "fJZ-Ql-UFp"; */
+"fJZ-Ql-UFp.normalTitle" = "Yellow color";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "kd3-OJ-obd"; */
+"kd3-OJ-obd.text" = "Date";
+
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "lQ5-Bk-sQz"; */
+"lQ5-Bk-sQz.normalTitle" = "X";
+
+/* Class = "UIButton"; normalTitle = "Red color"; ObjectID = "nAp-Uv-b8H"; */
+"nAp-Uv-b8H.normalTitle" = "Red color";
+
+/* Class = "UIButton"; normalTitle = "Редактировать"; ObjectID = "pLF-Bl-Dqh"; */
+"pLF-Bl-Dqh.normalTitle" = "Редактировать";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tb4-JB-fE6"; */
+"tb4-JB-fE6.text" = "Label";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "tcB-rn-t8D"; */
+"tcB-rn-t8D.text" = "Name";
