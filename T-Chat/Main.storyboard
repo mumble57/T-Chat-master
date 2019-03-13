@@ -287,7 +287,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcE-Uw-cwO">
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="placeholder-user" translatesAutoresizingMaskIntoConstraints="NO" id="BcE-Uw-cwO">
                                 <rect key="frame" x="16" y="80" width="288" height="288"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="BcE-Uw-cwO" secondAttribute="height" multiplier="1:1" id="46V-Rs-B9W"/>
