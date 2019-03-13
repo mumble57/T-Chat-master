@@ -2,9 +2,7 @@ import UIKit
 
 class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewDelegate {
     
-    
     let defaultImage = UIImage(named:"placeholder-user")
-
     
     @IBOutlet private weak var profileImage: UIImageView!
     @IBOutlet private weak var chooseImageButton: UIButton!
@@ -18,14 +16,7 @@ class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewD
     var activityInd: UIActivityIndicatorView = UIActivityIndicatorView()
     
     var profileIsEditing = false
-    //    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        //print(changeProfileButton.layer.frame)
-//        //Stored properties cannot be left in an indeterminate state!!!
-//        //аутлет из нил ин инит
-//    }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         editProfileButtonPress()
@@ -34,8 +25,6 @@ class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewD
         self.hideKeyboardWhenTappedAround()
 
         profileImage.layer.cornerRadius = 60
-
-        
         
         //сохраняем имя, описания, фото
         let defaults = UserDefaults.standard
@@ -48,14 +37,8 @@ class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewD
         if let imgData = defaults.object(forKey: "savedImage") as? NSData{
             profileImage.image = UIImage(data: imgData as Data)
         }
-//        let imgData = UserDefaults.standard.object(forKey: "savedImage") as? NSData
-//        if imgData != nil
-//        {
-//            profileImage.image = UIImage(data: imgData! as Data)}
-//        else{
-//            profileImage.image = defaultImage}
+
         profileImage.layer.masksToBounds = true
-  
 
         changeProfileButton.layer.borderWidth = 1
         changeProfileButton.layer.cornerRadius = 10
@@ -105,7 +88,6 @@ class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewD
             DescriptionTextView.isEditable = true
             DescriptionTextView.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
             DescriptionTextView.layer.cornerRadius = 20
-            
 
         }
         //Режим простого просмотра профиля
@@ -163,20 +145,43 @@ class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewD
                 self.view.addSubview(self.activityInd)
                 
             }
-
-
         }
-
-        
-
 
     }
     @IBAction func OperationActionButton(_ sender: Any) {
         profileIsEditing = false
         editProfileButtonPress()
         
-        UserDefaults.standard.set(NameTextView.text, forKey: "savedName")
-        UserDefaults.standard.set(DescriptionTextView.text, forKey: "savedDescription")
+        let operationQueue: OperationQueue = OperationQueue()
+        operationQueue.addOperation {
+            UserDefaults.standard.set(self.NameTextView.text, forKey: "savedName")
+            UserDefaults.standard.set(self.DescriptionTextView.text, forKey: "savedDescription")
+            
+            self.activityInd.startAnimating()
+            
+            //записываем картинку профиля
+            let currentImage = self.profileImage.image
+            let imageData:NSData = currentImage!.pngData()! as NSData
+            UserDefaults.standard.set(imageData, forKey: "savedImage")
+            
+            let alert = UIAlertController(title: "Данные сохранены", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ (UIAlertAction)in
+                //self.activityInd.stopAnimating()
+            }))
+            self.present(alert, animated: true, completion: {
+            })
+            
+            self.activityInd.center = self.view.center
+            self.activityInd.hidesWhenStopped = true
+            self.activityInd.style = UIActivityIndicatorView.Style.gray
+            self.view.addSubview(self.activityInd)
+            
+            
+        }
+
+        operationQueue.waitUntilAllOperationsAreFinished()
+        self.activityInd.stopAnimating()
+
 
     }
     
