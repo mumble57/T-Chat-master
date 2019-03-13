@@ -11,31 +11,16 @@
     IBOutlet UIButton *changeColorButton1;
     IBOutlet UIButton *changeColorButton2;
     IBOutlet UIButton *changeColorButton3;
-    //    - (void) doSomething{
-//        // Do cool things here.
-//        // Now call delegate, in this example, this will be ClassB
-//        //[themesViewControllerDelegate didDoSomethingCool:@"Hello from Class A"];
-//        self.view.backgroundColor = [UIColor redColor];
-//    }
-
 
 }
-- (void) doSomething{
-        // Do cool things here.
-        // Now call delegate, in this example, this will be ClassB
-        //[themesViewControllerDelegate didDoSomethingCool:@"Hello from Class A"];
-        self.view.backgroundColor = [UIColor redColor];
-}
+
 - (IBAction)close:(UIButton *)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
 -(IBAction)changColor:(UIButton *)sender{
-    //NSLog(@"%i", (UIButton *)sender.tag);
 
-//    if (sender.selected)
-//        return;
-    Themes *theme = [[Themes alloc]init: UIColor.redColor theme2:UIColor.greenColor theme3:UIColor.yellowColor];
+    Themes *theme = [[Themes alloc]init: UIColor.whiteColor theme2:UIColor.greenColor theme3:UIColor.yellowColor];
     UIColor *selectedThemeColor;
     switch (sender.tag) {
         case 1:
