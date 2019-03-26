@@ -11,6 +11,10 @@
 		831C8CFE222DBB8A001BD03A /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C8CFD222DBB8A001BD03A /* Themes.m */; };
 		832374422230622F00DF611D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832374402230622F00DF611D /* Main.storyboard */; };
 		832374432230622F00DF611D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832374412230622F00DF611D /* LaunchScreen.storyboard */; };
+		8358440A2247DBB2005A59CE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 835844082247DBB2005A59CE /* Model.xcdatamodeld */; };
+		83A2E2B022498E4E00BCA094 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2E2AF22498E4E00BCA094 /* PersistenceService.swift */; };
+		83A2FF472249943400147E00 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FF452249943400147E00 /* User+CoreDataClass.swift */; };
+		83A2FF482249943400147E00 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FF462249943400147E00 /* User+CoreDataProperties.swift */; };
 		95D5A59122233522003D65B7 /* ConversationListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5A59022233522003D65B7 /* ConversationListViewCell.swift */; };
 		95D5A5932223EFAC003D65B7 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5A5922223EFAC003D65B7 /* ConversationViewController.swift */; };
 		95D5A5952223F209003D65B7 /* ConversationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5A5942223F209003D65B7 /* ConversationViewCell.swift */; };
@@ -29,6 +33,10 @@
 		8323743D22304D6200DF611D /* Themes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Themes.h; sourceTree = "<group>"; };
 		832374402230622F00DF611D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		832374412230622F00DF611D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		835844092247DBB2005A59CE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		83A2E2AF22498E4E00BCA094 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		83A2FF452249943400147E00 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		83A2FF462249943400147E00 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95D5A59022233522003D65B7 /* ConversationListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListViewCell.swift; sourceTree = "<group>"; };
 		95D5A5922223EFAC003D65B7 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		95D5A5942223F209003D65B7 /* ConversationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewCell.swift; sourceTree = "<group>"; };
@@ -62,6 +70,16 @@
 				830853C8222C16F100CF8514 /* T-Chat-Bridging-Header.h */,
 			);
 			path = " Themes";
+			sourceTree = "<group>";
+		};
+		83A2FF492249944C00147E00 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				83A2E2AF22498E4E00BCA094 /* PersistenceService.swift */,
+				83A2FF452249943400147E00 /* User+CoreDataClass.swift */,
+				83A2FF462249943400147E00 /* User+CoreDataProperties.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		95D5A5962223F667003D65B7 /* Conversation */ = {
@@ -109,8 +127,10 @@
 		95E293CB2211A5F3004FECC7 /* T-Chat */ = {
 			isa = PBXGroup;
 			children = (
+				83A2FF492249944C00147E00 /* Core Data */,
 				832374412230622F00DF611D /* LaunchScreen.storyboard */,
 				832374402230622F00DF611D /* Main.storyboard */,
+				835844082247DBB2005A59CE /* Model.xcdatamodeld */,
 				95E293CC2211A5F3004FECC7 /* AppDelegate.swift */,
 				830853C7222C16B800CF8514 /*  Themes */,
 				95D5A5972223F690003D65B7 /* ConversationList */,
@@ -196,10 +216,14 @@
 			files = (
 				830853CA222C16F100CF8514 /* ThemesViewController.m in Sources */,
 				831C8CFE222DBB8A001BD03A /* Themes.m in Sources */,
+				83A2FF482249943400147E00 /* User+CoreDataProperties.swift in Sources */,
 				95DA9A7C2220887D003F8EA6 /* ConversationListViewController.swift in Sources */,
 				95E293CF2211A5F3004FECC7 /* ProfileViewController.swift in Sources */,
 				95D5A5932223EFAC003D65B7 /* ConversationViewController.swift in Sources */,
+				83A2E2B022498E4E00BCA094 /* PersistenceService.swift in Sources */,
+				8358440A2247DBB2005A59CE /* Model.xcdatamodeld in Sources */,
 				95D5A5952223F209003D65B7 /* ConversationViewCell.swift in Sources */,
+				83A2FF472249943400147E00 /* User+CoreDataClass.swift in Sources */,
 				95E293CD2211A5F3004FECC7 /* AppDelegate.swift in Sources */,
 				95D5A59122233522003D65B7 /* ConversationListViewCell.swift in Sources */,
 			);
@@ -391,6 +415,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		835844082247DBB2005A59CE /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				835844092247DBB2005A59CE /* Model.xcdatamodel */,
+			);
+			currentVersion = 835844092247DBB2005A59CE /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 95E293C12211A5F3004FECC7 /* Project object */;
 }

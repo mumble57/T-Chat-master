@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="100" id="frL-8A-uCg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Green color"/>
+                                <state key="normal" title="Gray color"/>
                                 <connections>
                                     <action selector="changColor:" destination="Se1-lD-BSl" eventType="touchUpInside" id="nvz-ca-P8N"/>
                                 </connections>
@@ -309,13 +309,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNE-Ai-s9S">
-                                <rect key="frame" x="16" y="494" width="138" height="44"/>
+                                <rect key="frame" x="16" y="494" width="288" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9DK-Qt-0XA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
-                                <state key="normal" title="GCD">
+                                <state key="normal" title="Сохранить">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
@@ -334,20 +334,6 @@
                                     <outlet property="delegate" destination="TDU-HC-dPc" id="cML-xB-ayd"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siF-3W-0wy">
-                                <rect key="frame" x="166" y="494" width="138" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="yys-mq-FOe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
-                                <state key="normal" title="Operation">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="OperationActionButton:" destination="TDU-HC-dPc" eventType="touchUpInside" id="KTV-IB-obX"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" editable="NO" text="Армен Айдинян" translatesAutoresizingMaskIntoConstraints="NO" id="ffV-fg-9mC">
                                 <rect key="frame" x="16" y="376" width="288" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -371,7 +357,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jGY-eK-fxY" firstAttribute="top" secondItem="AXs-nF-c9Z" secondAttribute="top" constant="112" id="2M8-NZ-tMm"/>
-                            <constraint firstItem="dNE-Ai-s9S" firstAttribute="width" secondItem="Ldu-FZ-Mvi" secondAttribute="width" multiplier="48:100" id="2xc-F5-aJS"/>
+                            <constraint firstItem="dNE-Ai-s9S" firstAttribute="width" secondItem="Ldu-FZ-Mvi" secondAttribute="width" multiplier="1:1" id="2xc-F5-aJS"/>
                             <constraint firstItem="BcE-Uw-cwO" firstAttribute="top" secondItem="AXs-nF-c9Z" secondAttribute="top" constant="16" id="D0H-Ng-B7e"/>
                             <constraint firstItem="ffV-fg-9mC" firstAttribute="leading" secondItem="AXs-nF-c9Z" secondAttribute="leading" constant="16" id="E6I-Bp-pdW"/>
                             <constraint firstItem="AXs-nF-c9Z" firstAttribute="bottom" secondItem="dNE-Ai-s9S" secondAttribute="bottom" constant="30" id="JR6-HA-V9s"/>
@@ -384,10 +370,7 @@
                             <constraint firstItem="AXs-nF-c9Z" firstAttribute="trailing" secondItem="jGY-eK-fxY" secondAttribute="trailing" constant="112" id="cl2-2e-d9F"/>
                             <constraint firstItem="AXs-nF-c9Z" firstAttribute="bottom" secondItem="Ldu-FZ-Mvi" secondAttribute="bottom" constant="30" id="dsc-Xv-f3Q"/>
                             <constraint firstItem="Ldu-FZ-Mvi" firstAttribute="leading" secondItem="AXs-nF-c9Z" secondAttribute="leading" constant="16" id="e8L-tF-vB2"/>
-                            <constraint firstItem="siF-3W-0wy" firstAttribute="width" secondItem="dNE-Ai-s9S" secondAttribute="width" id="eyQ-R7-Veb"/>
-                            <constraint firstItem="AXs-nF-c9Z" firstAttribute="trailing" secondItem="siF-3W-0wy" secondAttribute="trailing" constant="16" id="j1t-ag-1Fc"/>
                             <constraint firstItem="AXs-nF-c9Z" firstAttribute="trailing" secondItem="BcE-Uw-cwO" secondAttribute="trailing" constant="16" id="k8D-1S-vRs"/>
-                            <constraint firstItem="AXs-nF-c9Z" firstAttribute="bottom" secondItem="siF-3W-0wy" secondAttribute="bottom" constant="30" id="nCn-LH-t5R"/>
                             <constraint firstItem="pzE-LY-fb6" firstAttribute="leading" secondItem="AXs-nF-c9Z" secondAttribute="leading" constant="16" id="pHG-Ct-wVH"/>
                             <constraint firstItem="AXs-nF-c9Z" firstAttribute="trailing" secondItem="pzE-LY-fb6" secondAttribute="trailing" constant="16" id="pcM-wv-eNt"/>
                             <constraint firstItem="BcE-Uw-cwO" firstAttribute="leading" secondItem="AXs-nF-c9Z" secondAttribute="leading" constant="16" id="vkK-Zv-zN3"/>
@@ -414,6 +397,20 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swq-YN-zEa" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siF-3W-0wy">
+                    <rect key="frame" x="0.0" y="0.0" width="138" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="yys-mq-FOe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
+                    <state key="normal" title="Operation">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="OperationActionButton:" destination="TDU-HC-dPc" eventType="touchUpInside" id="KTV-IB-obX"/>
+                    </connections>
+                </button>
                 <exit id="ugX-Wm-5hM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1806" y="98"/>
@@ -421,7 +418,6 @@
         <!--Navigation Controller-->
         <scene sceneID="s0U-9E-9hc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ztS-qs-GCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jap-3q-hJo" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IYe-7m-K9y">
@@ -433,6 +429,7 @@
                         <segue destination="TDU-HC-dPc" kind="relationship" relationship="rootViewController" id="ff8-m8-0Q6"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ztS-qs-GCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1026" y="97"/>
         </scene>

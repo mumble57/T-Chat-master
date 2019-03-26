@@ -20,7 +20,7 @@
 
 -(IBAction)changColor:(UIButton *)sender{
 
-    Themes *theme = [[Themes alloc]init: UIColor.whiteColor theme2:UIColor.greenColor theme3:UIColor.yellowColor];
+    Themes *theme = [[Themes alloc]init: UIColor.whiteColor theme2:UIColor.grayColor theme3:UIColor.yellowColor];
     UIColor *selectedThemeColor;
     switch (sender.tag) {
         case 1:

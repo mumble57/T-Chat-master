@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewDelegate {
     
@@ -14,11 +15,33 @@ class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewD
     @IBOutlet var DescriptionTextView: UITextView!
 
     var activityInd: UIActivityIndicatorView = UIActivityIndicatorView()
-    
     var profileIsEditing = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        
+        do {
+            let users = try! PersistenceService.context.fetch(fetchRequest)
+            let user: User = users.last as! User
+            NameTextView.text = user.name
+            DescriptionTextView.text = user.descripcion
+
+            if let imageData = user.pic {
+                profileImage.image = UIImage(data: imageData as Data)
+            }
+            
+        }
+        
+        // Configure Fetch Request
+//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+//        let users = try! managedContext.fetch(fetchRequest)
+//        let user: User = users.first as! User
+//        if let imageData = user?.pic {
+//            imgView.image = UIImage(data: imageData as Data)
+//        }
+        
         editProfileButtonPress()
         
         //dismiss keyboard
@@ -27,16 +50,16 @@ class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewD
         profileImage.layer.cornerRadius = 60
         
         //сохраняем имя, описания, фото
-        let defaults = UserDefaults.standard
-        if let nameData = defaults.string(forKey: "savedName"){
-            NameTextView.text = nameData
-        }
-        if let descriptionData = defaults.string(forKey: "savedDescription"){
-            DescriptionTextView.text = descriptionData
-        }
-        if let imgData = defaults.object(forKey: "savedImage") as? NSData{
-            profileImage.image = UIImage(data: imgData as Data)
-        }
+//        let defaults = UserDefaults.standard
+//        if let nameData = defaults.string(forKey: "savedName"){
+//            NameTextView.text = nameData
+//        }
+//        if let descriptionData = defaults.string(forKey: "savedDescription"){
+//            DescriptionTextView.text = descriptionData
+//        }
+//        if let imgData = defaults.object(forKey: "savedImage") as? NSData{
+//            profileImage.image = UIImage(data: imgData as Data)
+//        }
 
         profileImage.layer.masksToBounds = true
 
@@ -115,6 +138,7 @@ class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewD
     
     //func GCD
     @IBAction func GCDActionButton(_ sender: Any) {
+        print("sef")
         profileIsEditing = false
         editProfileButtonPress()
         
@@ -122,15 +146,28 @@ class ProfileViewController: UIViewController,UIActionSheetDelegate, UITextViewD
         let userInteractiveQueue = DispatchQueue.global(qos: .userInteractive)
         userInteractiveQueue.async {
             DispatchQueue.main.async {
-                UserDefaults.standard.set(self.NameTextView.text, forKey: "savedName")
-                UserDefaults.standard.set(self.DescriptionTextView.text, forKey: "savedDescription")
+//                UserDefaults.standard.set(self.NameTextView.text, forKey: "savedName")
+//                UserDefaults.standard.set(self.DescriptionTextView.text, forKey: "savedDescription")
                 
                 self.activityInd.startAnimating()
+                // Create User
+                let user = User(context: PersistenceService.context)
+
+                // Configure User
+                user.name = self.NameTextView.text
+                user.descripcion = self.DescriptionTextView.text
+                if let img = self.profileImage.image {
+                    let data = img.pngData() as NSData?
+                    user.pic = data
+                }
+                
 
                 //записываем картинку профиля
-                let currentImage = self.profileImage.image
-                let imageData:NSData = currentImage!.pngData()! as NSData
-                UserDefaults.standard.set(imageData, forKey: "savedImage")
+//                let currentImage = self.profileImage.image
+//                let imageData:NSData = currentImage!.pngData()! as NSData
+//                UserDefaults.standard.set(imageData, forKey: "savedImage")
+                
+                PersistenceService.saveContext()
                 
                 let alert = UIAlertController(title: "Данные сохранены", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ (UIAlertAction)in
